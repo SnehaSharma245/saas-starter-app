@@ -19,6 +19,7 @@ type prismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
 //Iska use development environment me hota hai to persist a single PrismaClient instance across multiple files/modules.
 //globalForPrisma object define kiya gaya hai jisme prisma property ho sakti hai (jo ya to PrismaClient instance hoga ya undefined).
 //Node.js environment me globalThis ek global object hota hai jo globally accessible variables ko manage karta hai.
+//unknown is a TypeScript type that represents an unknown value.
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
